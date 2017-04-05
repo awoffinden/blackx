@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{{ title }}</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://use.fontawesome.com/671058cb9b.js"></script>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="container-fluid topbar">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="container topbar-text">
+							<div class="row">
+								<div class="col-xs-6">
+									<form action="/" method="get">
+										<button class="button-lite" type="submit"><i class="fa fa-home" aria-hidden="true"></i></button>&nbsp;&nbsp;The Black X
+									</form>
+								</div>
+								<div class="col-xs-6 text-right">
+										{{#if firstname}}
+											<form action="logout" method="get">
+												Welcome&nbsp;{{firstname}}&nbsp;&nbsp;<button class="button-lite white font-medium" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;Logout</button>
+											</form>
+										{{else}}
+											<form action="login" method="get">
+												<button class="button-lite white font-medium" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login</button>
+											</form>
+										{{/if}}
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid page-bar">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<span>{{ title }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{{ body }}}
+		</div>
+	</body>
+</html>

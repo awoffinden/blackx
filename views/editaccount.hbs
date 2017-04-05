@@ -1,0 +1,46 @@
+{{#if editaccounterror}}
+<div class="container-fluid back-red">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-xs-offset-3 font-medium">
+						Please fix the following before continuing:
+						<ul>
+							{{#each editaccounterrors}}
+							<li>{{this.msg}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}
+<br />
+<br />
+<form action="editaccount_submit" method="post">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="form-group">
+					<label for="firstname">First Name</label>
+					<input type="text" id="firstname" name="firstname" class="form-control" {{#if firstname}} value={{ firstname }}{{/if}} />
+				</div><div class="form-group">
+					<label for="lastname">Last Name</label>
+					<input type="text" id="lastname" name="lastname" class="form-control" {{#if lastname}} value={{ lastname }}{{/if}}>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="text" id="email" name="email" class="form-control" {{#if email}} value={{ email }}{{/if}}>
+				</div>
+				<div class="pull-right">
+					<br />
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+

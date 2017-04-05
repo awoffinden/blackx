@@ -1,0 +1,43 @@
+{{#if loginerror}}
+<div class="container-fluid back-red">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-xs-offset-3 font-medium">
+						Error logging in to account:
+						<ul>
+							{{#each loginerrors}}
+							<li>{{this.msg}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}
+<br />
+<br />
+<form action="login_submit" method="post">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="text" id="email" name="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password" class="form-control">
+				</div>
+				<div class="pull-right">
+					<br />
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
